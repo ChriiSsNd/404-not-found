@@ -1,0 +1,143 @@
+@use 'functions';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Montserrat&family=Space+Mono:wght@400;700&display=swap');
+
+$font-Inconsolata: 'Inconsolata', monospace;
+$font-Montserrat: 'Montserrat', sans-serif;
+$font-Space-Mono: 'Space Mono', monospace;
+
+$basic-size: 14px;
+$color-black: #000;
+$color-white: #fff;
+$dark-gray: #333333;
+$light-gray: #BDBDBD; 
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: $basic-size;
+    font-weight: 400;
+}
+
+.wrapper {
+    width: calc(100% - 48px);
+    margin: auto;
+}
+
+header {
+    padding: {
+        top: 20px;
+        bottom: 64px;
+    };
+
+    .header__heading {
+        font-family: $font-Inconsolata;
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-black;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.main__photo {
+    min-width: 231px;
+    width: 100%;
+    display: block;
+    margin: 77.65px auto 40px auto;
+}
+
+.main_description {
+    font-family: $font-Space-Mono;
+    
+    h1 {
+        font-size: functions.converterPxEm(48px);
+    }
+    p {
+        font-size: functions.converterPxEm(18px);
+        max-width: 327px;
+    }
+}
+
+.main__button {
+    text-decoration: none;
+    color: #fff;
+    background-color: $dark-gray;
+    padding: 20px 25px;
+    font-family: $font-Space-Mono;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: {
+        top: 66px;
+        bottom: 114px;
+    };
+}
+
+.copyright {
+    color: $light-gray;
+    text-align: center;
+    font-family: $font-Montserrat;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
+    
+    .wrapper {
+        width: calc( 100% - (77px * 2) );
+    }
+    
+    header {
+        padding: {
+            top: 40px;
+            bottom: 200px;
+        };
+    }
+
+    main {
+        display: flex;
+        gap: 119px;
+        margin-bottom: 294px;
+    }
+    
+    .main__photo {
+        max-width: 589px;
+        margin: 0;
+    } 
+    
+    .main_description {
+        h1 {
+            font-size: functions.converterPxEm(64px);
+            max-width: 586px;
+        }
+        p {
+            font-size: functions.converterPxEm(24px);
+            max-width: 350px;
+        }
+    }
+    
+    .main__button {
+        padding: 20px 25px;
+        margin: {
+            top: 64px;
+            bottom: 0;
+        };
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    
+    main {
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1024px) { 
+    
+    main {
+        gap: 60px;
+    }
+}
+
+
